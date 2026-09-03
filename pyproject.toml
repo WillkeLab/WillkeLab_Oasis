@@ -20,14 +20,14 @@ dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-dependencies = ["nomad-lab[infrastructure]==1.4.3", "nomad-gui>=2.0.0b2"]
+dependencies = ["nomad-lab[infrastructure]==1.4.3"]
 
 [project.urls]
 repository = "https://github.com/willkelab/willkelab_oasis"
 
 [project.optional-dependencies]
 # Add your plugins to the list below.
-plugins = ["nomad-north-jupyter>=0.2.6"]
+plugins = ["nomad-north-jupyter>=0.2.6", "nomad-gui>=2.0.0b2"]
 jupyter = ["jupyter-events"]
 gpu-action = []
 cpu-action = []
@@ -41,4 +41,4 @@ extra-index-url = [
 prerelease = "if-necessary-or-explicit"
 
 [tool.setuptools.packages.find]
-exclude = ["gui*", "docs*", "config*"]
+exclude = ["docs*", "config*"]
