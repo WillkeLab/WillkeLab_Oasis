@@ -3585,7 +3585,6 @@ wheels = [
 name = "nomad-distribution"
 source = { editable = "." }
 dependencies = [
-    { name = "nomad-gui" },
     { name = "nomad-lab", extra = ["infrastructure"] },
 ]
 
@@ -3597,13 +3596,14 @@ jupyter = [
     { name = "jupyter-events" },
 ]
 plugins = [
+    { name = "nomad-gui" },
     { name = "nomad-north-jupyter" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "jupyter-events", marker = "extra == 'jupyter'" },
-    { name = "nomad-gui", specifier = ">=2.0.0b2" },
+    { name = "nomad-gui", marker = "extra == 'plugins'", specifier = ">=2.0.0b2" },
     { name = "nomad-lab", extras = ["dev", "infrastructure"], marker = "extra == 'dev'", specifier = "==1.4.3" },
     { name = "nomad-lab", extras = ["infrastructure"], specifier = "==1.4.3" },
     { name = "nomad-north-jupyter", marker = "extra == 'plugins'", specifier = ">=0.2.6" },
